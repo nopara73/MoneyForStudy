@@ -21,7 +21,7 @@
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
     </environment>
-
+    @Html.ApplicationInsightsJavaScript(TelemetryConfiguration)
 </head>
 <body>
     <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -29,16 +29,33 @@
             <div class="navbar-header">
                 <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">Money for Study</a>
             </div>
+            <div>
+                <form class="navbar-form navbar-right">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Username / Email" />
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Password" />
+                    </div>
+                    <button type="submit" class="btn btn-default">Register / Log in</button>
+                </form>
+            </div>
         </div>
     </nav>
 
     <div class="container body-content">
         @RenderBody()
+        <hr />
+        <footer>
+            <a>Privacy Policy</a>
+            <a>Contact</a>
+        </footer>
     </div>
 
     <environment names="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
     </environment>
     <environment names="Staging,Production">
         <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.1.1.min.js"
@@ -49,6 +66,7 @@
                 asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
                 asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal">
         </script>
+        <script src="~/js/site.min.js" asp-append-version="true"></script>
     </environment>
 </body>
 </html>
