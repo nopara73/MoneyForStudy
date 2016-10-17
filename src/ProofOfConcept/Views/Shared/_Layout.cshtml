@@ -31,6 +31,7 @@
                 <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">Money for Study</a>
             </div>
             <div>
+                @await Html.PartialAsync("_LoginPartial")
                 <form class="navbar-form navbar-right">
                     <div class="form-group">
                         <input type="text" class="form-control" placeholder="Username / Email" />
@@ -43,7 +44,6 @@
             </div>
         </div>
     </nav>
-
     <div class="container body-content">
         @RenderBody()
         <hr />
@@ -72,5 +72,7 @@
         </script>
         <script src="~/js/site.min.js" asp-append-version="true"></script>
     </environment>
+
+    @RenderSection("scripts", required: false)
 </body>
 </html>
