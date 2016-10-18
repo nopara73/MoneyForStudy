@@ -1,4 +1,6 @@
-﻿@using Microsoft.AspNetCore.Identity
+﻿@model LoginRegisterViewModel
+
+@using Microsoft.AspNetCore.Identity
 @using ProofOfConcept.Models
 
 @inject SignInManager<ApplicationUser> SignInManager
@@ -19,8 +21,15 @@
 }
 else
 {
-    <ul class="nav navbar-nav navbar-right">
-        <li><a asp-area="" asp-controller="Account" asp-action="Register">Register</a></li>
-        <li><a asp-area="" asp-controller="Account" asp-action="Login">Log in</a></li>
-    </ul>
+    <form asp-controller="Account" asp-action="LoginRegister" asp-route-returnurl="@ViewData["ReturnUrl"]" method="post" class="navbar-form navbar-right">
+        <div class="form-group">
+            <input asp-for="UsernameEmail" class="form-control" placeholder="Username / Email" />
+        </div>
+        <div class="form-group">
+            <input asp-for="Password" class="form-control" placeholder="Password" />
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-default">Register / Log in</button>
+        </div>
+    </form>
 }
