@@ -34,17 +34,35 @@
     font-size: 12px;
     letter-spacing: 2px;
 }
-
-.navbar-nav li a:hover {
+        .navbar-nav li a:hover {
     color: #0E1319;
 }
+        .navbar-brand {
+ font-family: 'Lato';
+ font-size: 25px;
+ font-weight: bold;
+ color: #FFF;
+ text-decoration: none;
+}
+        body {
+    font: 400 15px/1.8 Lato, sans-serif;
+    color: #777;
+}
+
+.navbar {
+    font-family: Montserrat, sans-serif;
+}
+
+
+
     </style>
 </head>
 <body>
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">Money for Study</a>
+                <img src="~/images/LOGO-08.png" class="navbar-left"/>
+                    <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">Money for Study</a>
             </div>
             <div>
                 @await Html.PartialAsync("_LoginPartial")                
