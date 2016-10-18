@@ -23,6 +23,22 @@
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
     </environment>
     @Html.ApplicationInsightsJavaScript(TelemetryConfiguration)
+
+    <style>
+        .navbar {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 0;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+.navbar-nav li a:hover {
+    color: #0E1319;
+}
+    </style>
 </head>
 <body>
     <nav class="navbar navbar-inverse navbar-fixed-top">
