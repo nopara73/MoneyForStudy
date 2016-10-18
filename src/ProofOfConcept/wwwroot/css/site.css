@@ -1,5 +1,17 @@
-﻿body {
-    padding-top: 65px;
+﻿.navbar {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 0;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+.navbar-nav li a:hover {
+    color: #0E1319;
+}
+body {
+    padding-top: 75px;
     padding-bottom: 20px;
 }
 
